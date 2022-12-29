@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========= Sidebar CSS Root =====*/
+    --blue-color: #0060ff;
+    --side-color: #0b5bde;
+    --bg-color: #12192C;
+    --light-color: #B6CEFC;
+    --bg-blue: #e0eafc;
+    --green-color: #4bbf73;
+    --hover-green: #37a95e;
+    --bg-green: #4bbf732d;
+    --red-color: rgba(224, 79, 71, 0.49);
+    --bg-red: #d9534f2d;
+
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    /*
+          Purple: hsl(250, 66%, 75%)
+          Blue: hsl(207, 90%, 72%)
+          Pink: hsl(356, 66%, 75%)
+          Teal: hsl(174, 63%, 62%)
+    */
+    --first-hue: 123;
+    --sat: 38%;
+    --lig: 57%;
+    --second-hue: 219;
+
+    --first-color: #66bb6a;
+    --first-color-alt: rgba(102, 187, 106, 0.75); /* -4% */
+    --second-color: #ff9800; /* -4% */
+    --second-color-alt: rgba(255, 152, 0, 0.75); /* -4% */
+    --title-color: hsl(var(--second-hue), 15%, 15%);
+    --text-color: hsl(var(--second-hue), 8%, 15%);
+    --text-color-light:  hsl(var(--second-hue), 8%, 75%);
+    --text-color-lighter: hsl(var(--second-hue), 4%, 55%);
+    --body-color: #fff;
+    --container-color: #fff;
+    --white-color: #fff;
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --biggest-font-size: 1.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .920rem;
+    --small-font-size: .873rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .625rem;
+
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+
+    --box-shadow-1: 0 8px 20px 0 rgba(0, 0, 0, 0.115);
+    --box-shadow-2:0px 20px 40px rgba(0, 0, 0, 0.08);
+    --box-shadow-3: 0px 10px 28px -6px rgba(0, 0, 0, 0.1);
+    --box-shadow-4: 0 0 2rem 0 rgba(100, 105, 119, 0.1);
+    --box-shadow-5: 0 0 1rem 0 rgba(153, 157, 169, 0.1);
+    --box-shadow-6: 0 5px 25px rgba(88, 89, 251, 0.7);
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 2.5rem;
+        --big-font-size: 3rem;
+        --h1-font-size: 2rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: .940rem;
+        --small-font-size: .900rem;
+        --smaller-font-size: .813rem;
+    }
+}
+::-webkit-scrollbar {
+    width:5px;
+    height: 4px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+    border-radius: 10px;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+}
+html {
+    scroll-behavior: smooth;
+    background-color: var(--body-color);
+}
+body,
+button,
+input,
+textarea {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+body {
+    background: var(--body-color) !important;
+    color: var(--text-color);
+    transition: .4s; /* for light mode animation */
+}
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-semibold);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none !important;
+}
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.section{
+    padding: 2rem 2rem 2rem 95px;
+    transition: all .5s ;
+}
+.alert{
+    font-size: var(--small-font-size);
+    margin: 0 0 !important;
+}
+.page_title_area{
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #000;
+}
+.page_title{
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    color: var(--text-color);
+    display: inline-block;
+}
+.page_title:before{
+    content: '#';
+    color: var(--blue-color);
+    padding-right: .5rem;
+}
+.page_link{
+    position: relative;
+    display: inline-block;
+    float: right;
+    right: 0;
+    color: var(--white-color);
+    padding: .75rem 1.25rem;
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    border-radius: .75rem;
+    margin: 0 1rem;
+    transition: all .25s;
+}
+.page_link i{
+    padding-right: .3rem;
+}
+.page_link:hover{
+    color: var(--white-color);
+}
+.page_link.blue{
+    background: var(--blue-color);
+}
+.page_link.red{
+    background: #ff053d;
+}
+.page_link.blue:hover{
+    background: var(--side-color);
+    color: var(--white-color);
+}
+.page_link.red:hover{
+    background: #ea0236;
+    color: var(--white-color);
+}
+.link_box{
+    position: relative;
+    display: inline-block;
+    background: var(--blue-color);
+    color: var(--white-color);
+    padding: .75rem 1.25rem;
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    border-radius: .75rem;
+    transition: all .25s;
+}
+.link_box:hover{
+    background: var(--side-color);
+    color: var(--white-color);
+}
+.link_box.red{
+    background: #ff053d;
+}
+
+/**************** VİDEO *******************/
+.fancybox-container{
+    z-index: 99999999 !important;
+}
+.video_img{
+    position: relative;
+    width: 100%;
+    max-height: 350px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+.video_img img{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .75rem;
+    max-height: 350px;
+    z-index: 0;
+}
+.play_button{
+    position: absolute;
+    right: 1rem;
+    top: .7rem;
+    z-index: 1;
+    cursor: pointer;
+}
+.play_button i{
+    padding: 0 .7rem;
+    background: #ff9800;
+    color: #fff;
+    border-radius: .5rem;
+    font-size: var(--h2-font-size);
+}
+.video_text{
+    position: absolute;
+    bottom: 1rem;
+    margin: 0 1rem;
+    border-radius: .5rem;
+    background: rgba(255, 152, 0, 0.9);
+    z-index: 0;
+    cursor: pointer;
+}
+.vide_exp{
+    padding: .75rem;
+    font-size: var(--normal-font-size);
+    color: var(--white-color);
+    font-weight: 500;
+    opacity: 1 !important;
+    z-index: 1;
+    margin: 0;
+}
+.video_iframe{
+    position: relative;
+    height: 360px;
+    width: 640px;
+    margin-left: -80px;
+}
+@media screen and (max-width: 700px){
+    .video_iframe{
+        max-width: 100%;
+        margin-left: 0;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 500px){
+    .video_iframe{
+        max-width: 100%;
+        margin-left: 0;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 400px){
+    .video_iframe{
+        max-width: 100%;
+        margin-left: 0;
+        height: 180px;
+    }
+}

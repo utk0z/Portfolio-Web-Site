@@ -1,0 +1,201 @@
+.login_form_area{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.login_form_area form{
+    width: 500px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: var(--box-shadow-1);
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+}
+.login_img{
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 0 0 4rem 0;
+}
+.login_img img{
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+.inputBox{
+    position: relative;
+    margin: 1rem 0;
+}
+.inputBox input,.inputBox select,.inputBox textarea{
+    position: relative;
+    width: 100%;
+    border: 0.12rem solid #e6e9ec;
+    background: none;
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    padding: 1rem;
+    border-radius: .75rem;
+    z-index: 1;
+    outline: none;
+    transition: all .25s;
+}
+.inputBox input::placeholder,.inputBox select:invalid,.inputBox textarea::placeholder{
+    font-weight: 400;
+    color: var(--text-color-lighter);
+}
+.inputBox select option{
+    color: var(--text-color);
+}
+.inputBox label{
+    transition: all .25s;
+    position: relative;
+    font-size: var(--normal-font-size);
+    padding: .25rem;
+    color: var(--blue-color);
+    z-index: 10;
+    font-weight: 600;
+}
+.inputBox label .required{
+    color: #ff053d;
+}
+form input[type="file"] {
+    cursor: pointer !Important;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    display: inline-block;
+    padding: .6rem 1rem .6rem 1rem;
+}
+.form input[type="file"]::-webkit-file-upload-button {
+    font-size: var(--smaller-font-size);
+    color: var(--white-color);
+    background: var(--blue-color);
+    border: 0;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.form input[type="file"]::-ms-browse {
+    background: var(--blue-color);
+    border: 0;
+    padding: .5rem 1rem;
+    font-size: var(--smaller-font-size);
+    cursor: pointer;
+    color: var(--white-color);
+}
+.inputBox img{
+    display: block;
+    width: 10rem;
+    object-fit: cover;
+}
+.login-btn{
+    position: relative;
+    width: 100%;
+    display: block;
+    background: #0000FFFF   ;
+    cursor: pointer;
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    font-size: var(--small-font-size);
+    transition: all .2s;
+}
+.login-btn i{
+    padding-right: .3rem;
+}
+.login-btn:active{
+    transform: scale(.85);
+}
+.load-btn {
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.load_text {
+    color: #ffffff;
+    transition: all 0.2s;
+}
+.loading-button .load_text {
+    visibility: hidden;
+    opacity: 0;
+}
+.loading-button::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height:20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+form:invalid button[type=submit]{
+    opacity: .5;
+    cursor:not-allowed;
+    pointer-events: none;
+}
+form:valid button[type=submit]{
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: initial;
+}
+@media screen and (max-width: 576px) {
+    .login_form_area form{
+        width: 350px;
+        max-width: 100%;
+        background: #fff;
+        box-shadow: var(--box-shadow-1);
+        padding: 3rem 4rem;
+        border-radius: 1rem;
+    }
+}
+.inputBox input:required ~ label:after,
+.inputBox textarea:required ~ label:after,
+.inputBox select:required ~ label:after{
+    content: " * ";
+    color: #ff0000;
+}
+.day_label{
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+    border-radius: .5rem;
+    padding: .75rem 1.25rem;
+    background: hsl(var(--second-hue), 80%,97%);
+    color: var(--text-color-lighter);
+    transition: all .25s;
+    cursor: pointer;
+}
+input[type=checkbox]:checked ~ .day_label{
+    background: var(--blue-color);
+    color: var(--white-color);
+}
+.date_label{
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+    border-radius: .5rem;
+    padding: .75rem 1.25rem;
+    font-size: var(--small-font-size);
+    background: var(--container-color);
+    color: var(--text-color);
+    box-shadow: var(--box-shadow-4);
+}

@@ -1,0 +1,182 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    z-index:99999;
+    display: inline-block;
+    width: 270px;
+    background-color: var(--white-color);
+    height: 100vh;
+    padding: 0 12px ;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: width .5s ;
+    box-shadow: var(--box-shadow-1);
+}
+.sidebar input{
+    display: none;
+}
+#side{
+    display: none;
+}
+.sidebar .check{
+    position: relative;
+    height: 60px;
+    transition: width .5s ;
+    z-index: 1;
+    color: #fff;
+    width: 255px;
+    display: flex;
+    align-items: center;
+}
+.sidebar .check label{
+    cursor: pointer;
+    margin-top: 5px;
+}
+.sidebar .check label{
+    position: relative;
+    font-size: var(--h2-font-size);
+    background: #dbe5f7;
+    transform: rotate(180deg) ;
+    transition: all .5s;
+    padding: .6rem .8rem;
+    border-radius: .5rem;
+}
+#side:checked ~ .sidebar .check label{
+    transform: rotate(0deg) ;
+    color: var(--text-color);
+    background:transparent;
+}
+.sidebar .check label:hover{
+    color: var(--blue-color);
+    background: var(--hover-color-alt) !important ;
+}
+.sidebar .check label i,
+.sidebar .check label i:hover{
+    color: var(--blue-color);
+    background:transparent !important;
+}
+.sidebar .check span{
+    font-size: 1.5rem;
+    padding: 10px ;
+    color: var(--text-color);
+}
+.sidebar .link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 245px;
+    font-size: var(--small-font-size);
+    margin: 10px 0;
+    border-radius: 8px ;
+    color: var(--text-color);
+    transition: all .2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+.sidebar .link i{
+    font-size: var(--h3-font-size);
+    color: var(--blue-color);
+    padding: .7rem .8rem;
+    border-radius: .5rem;
+    transition: all .3s;
+}
+.sidebar .link #name{
+    padding-left: 10px;
+}
+.sidebar .link span i{
+    position: absolute;
+    right: .2rem;
+    transition: .3s;
+    top:0;
+    background: transparent;
+    font-size: 20px;
+    color: var(--blue-color);
+}
+.sidebar .link:hover,
+.sidebar .link.active{
+    text-decoration: none;
+    background: #dbe5f7;
+}
+.sidebar .link:hover i{
+    color: var(--blue-color);
+}
+.sidebar .link:hover span i{
+    background: transparent;
+}
+.drop{
+    width: 100%;
+    position: relative;
+}
+.drop{
+    list-style: none;
+    padding: 5px 15px;
+    background-color: #dbe5f7;
+    border-radius: 8px;
+    display: none;
+    width: 245px;
+}
+.drop .drop-link{
+    display: block;
+    font-size: 14px;
+    color: #293042;
+    margin: 10px 0;
+    padding: 0 0 0 10px;
+    text-decoration: none;
+}
+.drop .drop-link:hover{
+    color: var(--blue-color);
+    text-decoration: none;
+}
+.sidebar input:checked ~ .drop{
+    display: block;
+}
+.sidebar input:checked ~ .link,
+.sidebar input:checked ~ .link i{
+    background-color: #dbe5f7;
+    color: var(--blue-color);
+}
+.sidebar input:checked ~ .link span i{
+    transform: rotate(180deg);
+    background: transparent;
+    top: 0;
+}
+#side:checked ~ .sidebar{
+    width: 65px;
+    display: inline-block;
+}
+#side ~ .section{
+    padding-left: 300px !important;
+}
+#side:checked ~ .section{
+    padding-left: 95px !important;
+}
+#side:checked ~ .sidebar .link.active{
+    text-decoration: none;
+    background-color: transparent;
+}
+#side:checked ~ .sidebar .link:hover{
+    background-color: transparent;
+}
+#side:checked ~ .sidebar i:hover,
+#side:checked ~ .sidebar .active i,
+.sidebar .active i{
+    transition: all .3s;
+    background: #dbe5f7;
+    color: var(--blue-color);
+}
+.sidebar .link:hover > i{
+    background: transparent;
+}
+#side:checked ~ .sidebar .link.logout:hover,
+.sidebar .link.logout i,
+#side:checked ~ .sidebar .link.logout{
+    background: transparent;
+    color: #d9312c;
+}
+.sidebar .link.logout,
+.sidebar .link.logout:hover,
+#side:checked ~ .sidebar .link.logout i:hover,
+#side:checked ~ .sidebar .link.logout i{
+    background:  #d9534f2d;
+    color: #d9312c;
+}

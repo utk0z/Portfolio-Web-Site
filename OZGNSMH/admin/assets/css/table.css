@@ -1,0 +1,239 @@
+.box-div{
+    position: relative;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 1.5rem 1.5rem;
+    background: var(--white-color);
+    box-shadow: var(--box-shadow-4);
+    border-radius: .5rem;
+}
+.table-title{
+    color: var(--title-color);
+    font-size: var(--h3-font-size);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.table-title a{
+    float: right;
+    font-weight: 400;
+    color: var(--white-color);
+    font-size: var(--small-font-size);
+    background: var(--blue-color);
+    padding: .85rem 1.25rem;
+    border-radius: .5rem;
+    transition: all .2s;
+}
+.table-title a:hover{
+    text-decoration: none;
+    background: var(--side-color);
+    color: var(--white-color);
+}
+.table-title i{
+    position: relative;
+    display: inline-block;
+    width: 2.5rem ;
+    height: 2.5rem;
+    margin-right: .2rem;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--bg-blue);
+    color: var(--blue-color);
+    font-size: var(--h3-font-size);
+    padding-top: .55rem;
+}
+.table-responsive table{
+    position: relative;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0;
+}
+.table-responsive table th{
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--blue-color);
+    font-size: var(--small-font-size);
+    vertical-align: top !important;
+}
+.table-responsive table th span{
+    position: relative;
+    display: block;
+    font-size: .6rem;
+    color: var(--text-color-light);
+}
+.table-responsive table td{
+    color: var(--text-color);
+    font-size: var(--smaller-font-size);
+    vertical-align: middle;
+}
+.table-responsive table td a.statistic{
+    font-size: var(--small-font-size);
+    padding: .3rem .4rem;
+    transition: all .2s;
+}
+.table-responsive table td a.statistic:active{
+    transform: scale(.85);
+}
+.table-responsive table tbody tr{
+    position: relative;
+    background: transparent;
+    transition: all .1s;
+    border-radius: .5rem;
+}
+.table-responsive table tbody tr:hover{
+    background: var(--form-bg);
+}
+.table-responsive table .view{
+    position: relative;
+    font-weight: 400;
+    padding: .3rem .7rem;
+    background: var(--change-blue-bg);
+    font-size: var(--smaller-font-size);
+    border-radius: .5rem;
+    color: #fff;
+    top: 0;
+    transition: all .2s;
+    overflow: hidden;
+}
+.table-responsive table .view span{
+    top: 0;
+    opacity: 1;
+    transition: all .2s;
+}
+.table-responsive table .view:hover{
+    text-decoration: none;
+    background: var(--hover-color);
+}
+.table-responsive table td img{
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+.statistic{
+    position: relative;
+    font-size: var(--smaller-font-size) !important;
+    display: inline-block;
+    padding: .4rem .8rem !important;
+    border-radius: .3rem;
+}
+table tr td a.statistic{
+    position: relative;
+}
+.statistic.plus{
+    color: var(--green-color);
+    background: var(--bg-green);
+}
+.statistic.minus{
+    color: #ff053d;
+    background: var(--bg-red);
+}
+.statistic.neutral{
+    color: var(--side-color);
+    background: var(--bg-blue);
+}
+.statistic.empty{
+    color: var(--text-color-light);
+    background: var(--body-bg);
+}
+.pagination-area{
+    position: relative;
+    margin: 1rem 0 0 0;
+    width: 100%;
+    display: inline-block;
+}
+.pagination-area p{
+    padding: .2rem .5rem;
+    float: left;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+}
+.pagination-area p i{
+    color: var(--blue-color);
+    padding-right: .2rem;
+}
+.pagination{
+    font-size: var(--smaller-font-size);
+    float: right;
+    position: relative;
+}
+.pagination .page{
+    margin: 0 .5rem 0 0;
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+    color: var(--text-color-light);
+    transition: all .2s;
+}
+.pagination .page.active,
+.pagination .page:hover{
+    color: var(--blue-color);
+    text-decoration: none;
+    background: #dbe5f7;
+}
+
+
+/* DATA TABLES CSS */
+.dataTables_length,.dataTables_filter{
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+.dataTables_filter{
+    float: left !important;
+}
+.dataTables_filter label input{
+    width: 100% !important;
+
+}
+div.dataTables_wrapper div.dataTables_length select{
+    cursor: pointer !important;
+}
+div.dataTables_wrapper div.dataTables_length select:focus {
+    box-shadow: none !important;
+}
+.dataTables_info{
+    position: relative !important;
+    margin-top: .5rem !important;
+    color: var(--side-color);
+    font-size: var(--small-font-size);
+    padding: .75rem 1rem !important;
+    background: var(--bg-blue);
+    border-radius: .5rem;
+}
+.dataTables_paginate.paging_simple_numbers{
+    position: relative !important;
+    margin-top: .5rem !important;
+    color: var(--side-color);
+    font-size: var(--small-font-size);
+    border-radius: .5rem;
+    margin-right: 3rem   !important;
+}
+.page-item.active .page-link:focus{
+    box-shadow: none !important;
+}
+.page-item .page-link:hover{
+    background-color: var(--bg-blue) !important;
+    color: var(--side-color) !important;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: var(--side-color) !important;
+    background-color: var(--bg-blue) !important;
+    border-color: var(--bg-blue) !important;
+}
+.page-item.active .page-link {
+    border-color: var(--bg-blue) !important;
+}
+.dataTables_empty{
+    position: relative;
+    margin: 1rem 0 !important;
+    color: #ff053d !important;
+    padding: .75rem 0 !important;
+    border-radius: .5rem !important;
+    background: var(--bg-red) !important;
+}
